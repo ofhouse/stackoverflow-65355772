@@ -2,7 +2,6 @@
 
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const isProd = process.env.NODE_ENV === 'production';
@@ -21,12 +20,7 @@ module.exports = {
     app: './src/index.js',
   },
 
-  plugins: [
-    new MiniCssExtractPlugin(),
-    new WebpackManifestPlugin({
-      publicPath: '/static/',
-    }),
-  ],
+  plugins: [new MiniCssExtractPlugin()],
 
   stats: 'minimal',
   mode: isProd ? 'production' : 'development',
