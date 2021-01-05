@@ -4,6 +4,9 @@ stages:
 build:
   image: node:14-alpine
   stage: build
+  before_script:
+    - node --version
+    - npm --version
   script:
     - npm ci
     - npm run build
