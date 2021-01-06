@@ -23,7 +23,7 @@ module.exports = {
     minimize: isProd,
     minimizer: [
       new CssMinimizerPlugin({
-        sourceMap: isProd,
+        parallel: false,
       }),
     ],
   },
